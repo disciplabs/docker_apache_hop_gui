@@ -2,6 +2,7 @@
 
 Esses dois arquivos, `docker-compose.yml` e `Dockerfile`, trabalham juntos para configurar e executar um ambiente Docker que contém o **Apache Hop GUI** (uma ferramenta de orquestração de dados ETL) em um contêiner Ubuntu com interface gráfica baseada no LXDE, acessível via navegador.
 
+
 ## Arquivo `docker-compose.yml`
 
 O `docker-compose.yml` é responsável por orquestrar e gerenciar o contêiner que será criado com base no `Dockerfile`. Ele define as configurações para rodar o serviço chamado `hop-gui`. Detalhes:
@@ -35,6 +36,37 @@ O `Dockerfile` define a imagem que será usada para construir o contêiner. Deta
 3. A interface gráfica pode ser acessada via navegador na porta `6080` do host, usando a interface do noVNC para visualizar o desktop LXDE com o Apache Hop GUI rodando.
 
 Essencialmente, essa configuração permite rodar uma versão gráfica do Apache Hop em um ambiente Docker, acessível de qualquer navegador via VNC.
+
+Para usar esse docker realize os seguintes passoas:<br>
+
+a) crie uma pasta para armazenar os arquivos, abra o terminal e digite dentro da pasta recem criada: <br>
+
+>  git clone https://github.com/disciplabs/docker_apache_hop_gui.git <br>
+
+b) Instale o Docker e o Docker Compose em sua máquina <br>
+c) no terminal digite:<br>
+
+> docker-compose up --build<br>
+
+(esse processo deve demorar um pouco - aguarde)<br>
+d) verifique no docker desktop se o serviço está ativo e digite no browser<br>
+
+> http://localhost:6080/<br>
+
+e) Acesse o terminal na interface grafica via web<br>
+f) abra um novo terminal na máquina linux disponível via browser<br>
+g)  no terminal da maquina instanciada via docker digite:<br>
+
+> cd /opt/hop<br>
+> ./hop-gui.sh<br>
+
+![image](https://github.com/user-attachments/assets/fc237f88-8c9a-4358-a401-8104d98b5ba5)<br>
+
+Parabéns, você agora poderá acessar o Hop diretamente no docker instanciado: <br>
+![image](https://github.com/user-attachments/assets/929e52d9-b905-44dc-ba63-a5525bbe57c2)
+
+
+
 
 
 OBS: Este é um procedimento para ser usado em ambiente de testes e aprendizado. Não use em ambiente de produção.
