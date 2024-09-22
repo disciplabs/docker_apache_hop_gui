@@ -21,6 +21,7 @@ a) crie uma pasta para armazenar os arquivos, abra o terminal e digite dentro da
 b) Instale o Docker e o Docker Compose em sua máquina <br>
 c) no terminal digite:<br>
 
+> docker-compose build
 > docker-compose up --build<br>
 
 (esse processo deve demorar um pouco - aguarde)<br>
